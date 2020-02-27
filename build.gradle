@@ -30,6 +30,10 @@ testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
  test{
   useTestNG(){
   suites 'testng.xml'
-  }
- 
+  useDefaultListeners=true;
+  outputDirectory= file("$projectDir/test-output");
+  } 
+
+ reports.html.setDestination(file("$projectDir/gradleReport"));
+
  }
